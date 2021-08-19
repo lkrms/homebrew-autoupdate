@@ -87,6 +87,9 @@ module Autoupdate
     # suddenly being worked hard.
     set_env = "export HOMEBREW_NO_BOTTLE_SOURCE_FALLBACK=1"
 
+    # The notifier uses this to find the correct log file.
+    set_env << "\nexport HOMEBREW_AUTOUPDATE_NAME=#{Autoupdate::Core.name}"
+
     set_env << "\nexport PATH='#{env_path}'"
     set_env << "\nexport HOMEBREW_CACHE='#{env_cache}'" if env_cache
     set_env << "\nexport HOMEBREW_LOGS='#{env_logs}'" if env_logs

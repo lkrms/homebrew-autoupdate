@@ -1,5 +1,5 @@
 try
-	set tailLog to do shell script "tail -r ~/Library/Logs/com.github.domt4.homebrew-autoupdate/*.out | grep -E -m1 'taps|date'"
+	set tailLog to do shell script "tail -r ~/Library/Logs/com.github.domt4.homebrew-autoupdate/${HOMEBREW_AUTOUPDATE_NAME}.out | grep -E -m1 'taps|date'"
 on error
 	set tailLog to "Logs not found; cannot show summary!"
 end try
